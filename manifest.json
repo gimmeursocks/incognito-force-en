@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Incognito English Search",
+  "version": "1.0",
+  "description": "Appends &hl=en to Google searches in Incognito mode",
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "tabs"
+  ],
+  "host_permissions": ["https://www.google.com/*"],
+  "incognito": "split",
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "action": {
+    "default_icon": {
+      "32": "icons/icon32.png"
+    },
+    "default_title": "Incognito English Search"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
